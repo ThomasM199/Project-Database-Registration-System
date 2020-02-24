@@ -1,15 +1,1 @@
-Open Data Government As a Potential Source for Smarter Government: Case Study in Oman	 Masters	 Business Information Technology	Open goverment, democracy, goverment, oman, open data, public	 Over the past several decades, Open Government has become a hot topic in many democratically developed countries. Open
-Governments aim at increasing transparency, public involvement and strengthen trust among citizens.
-
-The main purpose of this study is to evaluate the current
-situation of open data in Oman and to identify the challenges
-and issues facing the government in order to utilise the data
-with a clear strategy. The research methodology adopted in
-this study is mainly qualitative through the use of interviews.
-
-The data is gathered from officials working in Oman government entities. Omani open data policy is reviewed as a
-secondary source to critically evaluate the clarity of the policy,
-whether the data is up to data and whether it is following the
-best practice.
-
-The result of this study shows that.	 Peter Cruickshank, Jyoti Bhardwaj	 "P.Cruickshank@napier.ac.uk, j.bhardwaj@napier.ac.uk
+Open Data Government As a Potential Source for Smarter Government: Case Study in Oman	 Masters	 Business Information Technology	Open goverment, democracy, goverment, oman, open data, public	 Over the past several decades, Open Government has become a hot topic in many democratically developed countries. Open Governments aim at increasing transparency, public involvement and strengthen trust among citizens. The main purpose of this study is to evaluate the current situation of open data in Oman and to identify the challenges and issues facing the government in order to utilise the data with a clear strategy. The research methodology adopted in this study is mainly qualitative through the use of interviews.The data is gathered from officials working in Oman government entities. Omani open data policy is reviewed as a secondary source to critically evaluate the clarity of the policy, whether the data is up to data and whether it is following the best practice.	Peter Cruickshank, Jyoti Bhardwaj	 P.Cruickshank@napier.ac.uk, j.bhardwaj@napier.ac.uk
