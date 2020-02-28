@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
 // output data of each row
 while($row = $result->fetch_assoc()) {
 echo "<tr><td>" . $row["name"]. "</td><td>" . $row["level"] . "</td><td>"
-. $row["course"]. . $row["keywords"]. "</td><td>" . $row["description"]. "</td><td>" . $row["lecturer"]. "</td><td>" . $row["lecture_email"]. "</td></tr>";
+. $row["course"].  $row["keywords"]. "</td><td>" . $row["description"]. "</td><td>" . $row["lecturer"]. "</td><td>" . $row["lecture_email"]. "</td></tr>";
 }
 echo "</table>";
 } else { echo "0 results"; }
