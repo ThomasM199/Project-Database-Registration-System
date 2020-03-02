@@ -1,0 +1,5 @@
+pip install Flask-Login
+pip install Flask
+pip install Flask-Bcrypt
+pip install Flask-SQLAlchemy
+pip install Flask-WTF
