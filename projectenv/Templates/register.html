@@ -1,0 +1,146 @@
+{% block body %}
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='css/bootstrap-theme.css') }}" rel="stylesheet" />
+
+<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet"/>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }} "></script>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+           <h2>Edinburgh Napier <br> | Database & Registration System | <br> Registration Page  </h2>
+           <p></p>
+        </div>
+     </div>
+     <div class="main">
+        <div class="col-md-6 col-sm-12">
+           <div class="login-form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {% if form.username.errors %}
+                    {{ form.username(class="form-control") }}
+                    <div class="error">
+                        {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="form-control") }}
+                {% endif %}      
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                    {{ form.password(class="form-control") }}
+            <div class="error">
+                    {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class="form-control") }}
+            {% endif %} 
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.label(class="form-control-label") }}
+                    {% if form.confirm_password.errors %}
+                {{ form.confirm_password(class="form-control") }}
+                <div class="error">
+                    {% for error in form.confirm_password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.confirm_password(class="form-control") }}
+            {% endif %}                           
+            </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn") }}
+            </div>
+                <div class="border-top">
+                    <small class="text-muted">
+                        <a class="ml-2" href="{{ url_for('register') }}">Register an account</a>
+                        <br>
+                        <a class="ml-2" href="{{ url_for('password') }}">Forgotten Password</a> / <a class="ml-2" href="{{ url_for('staff') }}">Staff Login</a>
+                    </small>
+                </div>
+              </form>
+           </div>
+        </div>
+     </div>
+  </body>
+<style>
+    body {
+    font-family: "Arial", sans-serif;
+}
+
+.main-head{
+    height: 150px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background:url("https://www.staffordglobal.org/wp-content/uploads/2019/11/napier-logo.png") no-repeat center;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color:black;
+}
+
+.border-top{
+    margin-top: 5%
+}
+.login-main-text h2{
+    font-weight: 300;
+}
+</style>
+{% endblock %}
+
