@@ -64,3 +64,12 @@ class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
+    
+class PostProject(FlaskForm):
+    Pname = StringField('Project Name', validators=[DataRequired()])
+    level = SelectField('Level', choices=[('Hons', 'Honors'),('MA', 'Masters'),])
+    course = SelectField([]) #not sure about this part
+    desc =  TextAreaField('Project Description', validators=[DataRequired])
+    lecture = StringField('Lecture Name', validators=[DataRequired])
+    Lemail = StringField('Lecture Email', validators=[DataRequired()], Email()])
+    submit = SubmitField('Submit')
