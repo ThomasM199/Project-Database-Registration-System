@@ -68,7 +68,7 @@ class ResetPasswordForm(FlaskForm):
 class PostProject(FlaskForm):
     Pname = StringField('Project Name', validators=[DataRequired()])
     level = SelectField('Level', choices=[('Hons', 'Honors'),('MA', 'Masters'),])
-    course = SelectField([]) #not sure about this part
+    course = SelectField('Course', choices=[]) #not sure about this part
     desc =  TextAreaField('Project Description', validators=[DataRequired])
     lecture = StringField('Lecture Name', validators=[DataRequired])
     Lemail = StringField('Lecture Email', validators=[DataRequired()], Email()])
