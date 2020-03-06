@@ -206,3 +206,14 @@ def reset_token(token):
         return redirect(url_for('login'))
         
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+@app.route("/postproject", methods=['GET', 'POST'])
+def post_project():
+    form = PostProject()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home'))
+    return render_template('postproject.html', title='New Post', form=form, legend='New Post')
