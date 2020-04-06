@@ -1,0 +1,50 @@
+All goes in init file
+
+
+##DB class for project
+class Project(db.Model, UserMixin):
+	name = db.Column(db.String(2000), nullable=False)
+	level = db.Column(db.String(200), nullable=False)
+	course = db.Column(db.String(200), nullable=False)
+	keywords = db.Column(db.String(2000), nullable=False)
+	description = db.Column(db.String(8000), nullable=False)
+	lecture = db.Column(db.String(2000), nullable=False)
+	lecture_email = db.Column(db.String(2000), nullable=False)
+	id = db.Column(db.Integer, primary_key=True)
+
+##Porjects page route
+@app.route('/projects/<id>')
+def project(id):
+    project = Project.query.filter_by(id=id).first()
+    return render_template('projects.html', myProject=project)
+
+
+##Project registration form
+class ProjectForm(FlaskForm):
+	name = StringField('Name', validators=[DataRequired()])
+	level = StringField('Level', validators=[DataRequired()])
+	course = StringField('Course', validators=[DataRequired()])
+	keywords = StringField('Keywords', validators=[DataRequired()])
+	description = StringField('Description', validators=[DataRequired()])
+	lecture = StringField('Lecturer', validators=[DataRequired()])
+	lecture_email = StringField('Lecturer email', validators=[DataRequired()])
+	submit = SubmitField('Add project')
+
+
+##Add projects route
+@app.route('/add', methods=['GET', 'POST'])
+def add():
+    forms = ProjectForm()
+    if forms.validate_on_submit():
+        db.session.add(name)
+	db.session.add(level)
+	db.session.add(course)
+	db.session.add(keywords)
+	db.session.add(description)
+	db.session.add(lecture)
+	db.session.add(lecture_email)
+        db.session.commit()
+
+        flash('Your project has succesfully been created')
+        return redirect(url_for('add'))
+    return render_template('add.html', forms=forms)
