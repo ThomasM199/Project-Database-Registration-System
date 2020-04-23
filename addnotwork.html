@@ -1,0 +1,132 @@
+		
+<!DOCTYPE html>
+
+
+<html lang ="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% extends "layout.html" %}
+{% block body %}
+
+<link href="{{ url_for('static', filename='css/external.css') }}" rel="stylesheet"/>
+
+<html>
+<head>
+	<link rel ="stylesheet" href ="external.css">
+	<title> Add Projects </title>
+</head>
+<body>
+ 
+ <div class="main">
+        <div class="col-md-6 col-sm-12">
+           <div class="login-form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control") }}
+                    <div class="error">
+                        {% for error in form.name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control") }}
+                {% endif %}      
+            </div>
+			
+            <div class="form-group">
+                {{ form.level.label(class="form-control-label") }}
+                    {% if form.level.errors %}
+                    {{ form.level(class="form-control") }}
+            <div class="error">
+                    {% for error in form.level.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.level(class="form-control") }}
+            {% endif %} 
+            </div>
+					
+			<div class="form-group">
+                {{ form.course.label(class="form-control-label") }}
+                    {% if form.course.errors %}
+                    {{ form.course(class="form-control") }}
+            <div class="error">
+                    {% for error in form.course.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.course(class="form-control") }}
+            {% endif %} 
+            </div>
+            <div class="form-group">
+                {{ form.keywords.label(class="form-control-label") }}
+                    {% if form.keywords.errors %}
+                {{ form.keywords(class="form-control") }}
+                <div class="error">
+                    {% for error in form.keywords.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.keywords(class="form-control") }}
+            {% endif %}                           
+            </div>
+			
+			<div class="form-group">
+                {{ form.description.label(class="form-control-label") }}
+                    {% if form.description.errors %}
+                    {{ form.description(class="form-control") }}
+            <div class="error">
+                    {% for error in form.description.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.description(class="form-control") }}
+            {% endif %} 
+            </div>
+			
+			<div class="form-group">
+                {{ form.lecture.label(class="form-control-label") }}
+                    {% if form.lecture.errors %}
+                    {{ form.lecture(class="form-control") }}
+            <div class="error">
+                    {% for error in form.lecture.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.lecture(class="form-control") }}
+            {% endif %} 
+            </div>
+			
+			<div class="form-group">
+                {{ form.lecture_email.label(class="form-control-label") }}
+                    {% if form.lecture_email.errors %}
+                    {{ form.lecture_email(class="form-control") }}
+            <div class="error">
+                    {% for error in form.lecture_email.errors %}
+                <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.lecture_email(class="form-control") }}
+            {% endif %} 
+            </div>
+			
+			<div class="form-group">
+                {{ form.submit(class="btn btn") }}
+            </div>
+
+</body>
+</html>
+
+{% endblock %}
