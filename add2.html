@@ -1,20 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
 <h1>Add Page</h1>
- {% for project in project %}
-                  <h2>The project name is:</b> {{ project.name }}</h2></a>
-                  <p><b>The level of study is:</b> {{ project.level }}
-				  <p><b>The course is:</b> {{ project.course }}
-				  <p><b>The keywords are:</b> {{ project.keywords }}
-				  <p><b>The description is:</b> {{ project.description}}
-				  <p><b>The lecturer is:</b> {{ project.lecture }}
-                  <p><b>The lecturer email is:</b>: {{ project.lecture_email }}</p>
-                  </p>
-    {% endfor %}
-{% endblock %}
-
-{% extends "layout.html" %}
-{% block body %}
 
 <div class="content-section">
     <form method="POST" action="" enctype="multipart/form-data">
