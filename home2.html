@@ -1,0 +1,204 @@
+<!DOCTYPE html> 
+<html lang ="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+{% extends "layout.html" %}
+{% block body %}
+
+<link href="{{ url_for('static', filename='css/external.css') }}" rel="stylesheet"/>
+<head> 
+<meta charset ="UTF-8">
+<link rel ="stylesheet" href ="external.css"> 
+<title> Project Database and Registration System </title >
+</head>
+<body>
+<!--Sidebar-->
+
+
+<div class="col-sm-3 sidebar">
+            <div class="bg-white shadow">
+              
+              
+              <div class="sidebar-menu">
+                 
+                <div class="sidebar-search-text">
+                    <input class="form-control" placeholder="Search Keyword" type="text">
+                </div>
+                <!-- Sidebar navigation -->
+                <ul class="nav sidebar-nav"> 
+
+		 <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Degree Filter:
+                      <span class="sidebar-badge badge-circle">
+                      </span>
+                    </a>
+                  </li>
+
+
+       
+		   <li>
+                    <a href="/masters">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                       Masters
+                      <span class="sidebar-badge badge-circle">
+                                         
+                      </span>
+                    </a>
+                  </li>
+
+		  <li>
+                    <a href="/honours">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Honours
+                      <span class="sidebar-badge badge-circle">
+                        
+                      </span>
+                    </a>
+                  </li>
+
+		<li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword Filter:
+                      <span class="sidebar-badge badge-circle">
+                      </span>
+                    </a>
+                  </li>
+
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge">
+                        3
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge">
+                        456
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        12
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        45
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        117
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        117
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        117
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-user icon"></span>
+                      Keyword
+                      <span class="sidebar-badge badge-circle">
+                        117
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- Sidebar divider -->
+              </div>
+              <!-- /.widget -->
+              
+             
+              
+            </div>
+            <!-- /col 4 - sidebar -->
+          </div>
+		  
+<!-- Sidebar -->
+
+<!-- Adapted from: https://bootsnipp.com/snippets/92xNm, License: https://bootsnipp.com/license-->
+<!-- Boxes -->
+
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5>Projects</h5>
+        <div class="row">
+		{% for project in project %}
+                  
+            <!-- Box -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    
+                                    <h4 class="card-title">{{ project.name }}</h4>
+                                    <p class="card-text">{{ project.course }}</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Keywords</h4>
+                                    <p class="card-text">{{ project.keywords }}</p>
+									<a href ="/projects/2"> Read more </a><br>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Boxes -->
+{% endfor %}
+</body>
+
+
+{% endblock %}
