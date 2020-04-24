@@ -1,0 +1,12 @@
+<form method="POST" action="">
+{% extends "layout.html" %}
+{% block body %}
+<h1>Home page</h1>
+ {% for project in myProject %}
+                  <h2>Name:</b> {{ myProject.name }}</h2></a>
+                  <p><b>Course:</b> {{ myProject.course }}
+                  <p><b>Keywords</b>: {{ myProject.keywords }}</p>
+                  </p>
+    {% endfor %}
+{% endblock %}
+</form>
