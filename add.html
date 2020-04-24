@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Add Page</h1>
+
+<div class="content-section">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+            <legend class="border-bottom ">{{ legend }}</legend>
+			
+
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                {{ form.name(class="form-control") }}
+                <div class="invalid-feedback">
+                    {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.name(class="form-control") }}
+            {% endif %} 
+			</div>
+			 <div class="form-group">
+                {{ form.course.label(class="form-control-label") }}
+                {% if form.course.errors %}
+                    {{ form.course(class="form-control") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.course.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.course(class="form-control") }}
+                {% endif %}      
+            </div>
+            <div class="form-group">
+                {{ form.level.label(class="form-control-label") }}
+                {% if form.level.errors %}
+                    {{ form.level(class="form-control") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.level.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.level(class="form-control") }}
+                {% endif %}  
+			</div>
+			         <div class="form-group">
+                {{ form.keywords.label(class="form-control-label") }}
+                {% if form.keywords.errors %}
+                    {{ form.keywords(class="form-control") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.keywords.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.keywords(class="form-control") }}
+                {% endif %}      
+            </div>
+            <div class="form-group">
+                {{ form.description.label(class="form-control-label") }}
+                {% if form.description.errors %}
+                {{ form.description(class="form-control") }}
+                <div class="invalid-feedback">
+                    {% for error in form.description.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+            {{ form.description(class="form-control") }}
+            {% endif %} 
+            </div>
+			         <div class="form-group">
+                {{ form.lecture.label(class="form-control-label") }}
+                {% if form.lecture.errors %}
+                    {{ form.lecture(class="form-control") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.lecture.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.lecture(class="form-control") }}
+                {% endif %}      
+            </div>
+			         <div class="form-group">
+                {{ form.lecture_email.label(class="form-control-label") }}
+                {% if form.lecture_email.errors %}
+                    {{ form.lecture_email(class="form-control") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.lecture_email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.lecture_email(class="form-control") }}
+                {% endif %}      
+            </div>
+			 
+           
+            <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
