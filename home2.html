@@ -162,7 +162,7 @@
     <div class="container">
         <h5>Projects</h5>
         <div class="row">
-		{% for project in project %}
+		{% for project in myProject %}
                   
             <!-- Box -->
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -172,8 +172,8 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     
-                                    <h4 class="card-title">{{ project.name }}</h4>
-                                    <p class="card-text">{{ project.course }}</p>
+                                    <h4 class="card-title">{{ myProjectt.name }}</h4>
+                                    <p class="card-text">{{ myProject.course }}</p>
                                     <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Keywords</h4>
-                                    <p class="card-text">{{ project.keywords }}</p>
+                                    <p class="card-text">{{ myProject.keywords }}</p>
 									<a href ="/projects/2"> Read more </a><br>
                                             </a>
                                         </li>
